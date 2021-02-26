@@ -3,7 +3,13 @@ import requests
 
 from bs4 import BeautifulSoup
 
-website_text = requests.get('https://en.wikipedia.org/wiki/List_of_Greek_and_Latin_roots_in_English/A%E2%80%93G').text
+#replace the link below with the wikipedia page containing the tables you want to scrape for root words
+#links used:
+# https://en.wikipedia.org/wiki/List_of_Greek_and_Latin_roots_in_English/A%E2%80%93G
+# https://en.wikipedia.org/wiki/List_of_Greek_and_Latin_roots_in_English/H%E2%80%93O
+# https://en.wikipedia.org/wiki/List_of_Greek_and_Latin_roots_in_English/P%E2%80%93Z
+
+website_text = requests.get('https://en.wikipedia.org/wiki/List_of_Greek_and_Latin_roots_in_English/P%E2%80%93Z').text
 soup = BeautifulSoup(website_text, 'xml')
 
 for table in soup.find_all('table', {'class':'wikitable sortable'}):
